@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import React from 'react';
 
 import './globals.css';
+import Navbar from '@/components/Navbar';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} min-h-screen bg-white-800 px-2 font-poppins dark:bg-black-300 sm:px-12`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
