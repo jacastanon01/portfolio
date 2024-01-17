@@ -13,9 +13,7 @@ const MobileNav = () => {
   }
 
   return (
-    <nav
-      className={`${isMenuOpen && 'bg-white-500/50'} relative flex items-center sm:hidden`}
-    >
+    <nav className='relative flex w-full items-center justify-end p-4 sm:hidden'>
       <div className='flex items-center gap-4'>
         <ThemeSwitch />
         <button onClick={toggleMenu}>

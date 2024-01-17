@@ -13,9 +13,9 @@ const NavMenuItems = () => {
         <Link
           key={item.href}
           href={item.href}
-          className={`${
+          className={`py-2 max-sm:px-4 ${
             pathname === item.href
-              ? 'px-4 font-semibold text-primary dark:text-primary-dark max-sm:rounded-xl max-sm:bg-primary max-sm:text-white-800 max-sm:dark:bg-primary-dark'
+              ? 'font-semibold text-primary dark:text-primary-dark max-sm:rounded-3xl max-sm:bg-primary max-sm:text-white-800 max-sm:dark:bg-primary-dark'
               : 'text-slate-500 dark:text-white-800'
           }`}
         >

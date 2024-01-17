@@ -4,8 +4,8 @@ export const menu = [
     href: '/',
   },
   {
-    title: 'Case Studies',
-    href: '/case-studies',
+    title: 'My Work',
+    href: '/projects',
   },
   {
     title: 'Contact',
