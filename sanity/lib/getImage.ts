@@ -1,5 +1,6 @@
-import { client } from './client';
 import { useNextSanityImage } from 'next-sanity-image';
+
+import { client } from './client';
 
 export default function GetImage(
   image: any,

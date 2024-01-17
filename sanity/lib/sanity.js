@@ -5,6 +5,7 @@ import {
 } from 'next-sanity';
 import createImageUrlBuilder from '@sanity/image-url';
 import { PortableText as PortableTextComponent } from '@portabletext/react';
+
 import { config } from './config';
 import GetImage from './getImage';
 
