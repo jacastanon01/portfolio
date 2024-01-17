@@ -1,25 +1,28 @@
 'use client';
-import React, { Dispatch, SetStateAction } from 'react';
-import Logo from '../logo';
-import CloseIcon from './CloseIcon';
+
+import { motion } from 'framer-motion';
+import React from 'react';
+import NavMenuItems from '../NavMenuItems';
 
 const MobileMenu = ({
-  setIsOpenNav,
+  menuState,
 }: {
-  setIsOpenNav: Dispatch<SetStateAction<boolean>>;
+  menuState: { isMenuOpen: boolean; toggleMenu: () => void };
 }) => {
   return (
-    <div className='absolute top-0 z-20 h-full w-full bg-[#666666]/25 p-[13px] dark:bg-[#1A202C]/60 lg:hidden'>
-      <div className='flex flex-col justify-between gap-5 rounded-[10px] bg-white-100 p-6 shadow-md shadow-gray-300 dark:bg-gray-850 dark:shadow-gray-850'>
-        <div className='flex items-center justify-between'>
-          <Logo />
-          <button onClick={() => setIsOpenNav(false)}>
-            <CloseIcon />
-          </button>
-        </div>
-        <div className='mt-6'></div>
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.3,
+        ease: 'easeOut',
+      }}
+      className='absolute top-0 z-20 size-full bg-white-800 px-2 py-4'
+    >
+      <div className='flex-between flex-col'>
+        <NavMenuItems />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

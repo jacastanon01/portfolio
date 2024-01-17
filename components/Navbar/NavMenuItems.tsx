@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import { menu } from '../menu';
+import { menu } from './menu';
 import { usePathname } from 'next/navigation';
 
 const NavMenuItems = () => {
@@ -15,7 +15,7 @@ const NavMenuItems = () => {
           href={item.href}
           className={`${
             pathname === item.href
-              ? 'font-semibold text-primary dark:text-primary-dark max-sm:rounded-xl max-sm:bg-primary max-sm:text-white-800 max-sm:dark:bg-primary-dark'
+              ? 'px-4 font-semibold text-primary dark:text-primary-dark max-sm:rounded-xl max-sm:bg-primary max-sm:text-white-800 max-sm:dark:bg-primary-dark'
               : 'text-slate-500 dark:text-white-800'
           }`}
         >
