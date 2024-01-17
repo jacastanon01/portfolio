@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base {
+  :root {
+    --primary: 244, 78%, 62%, 1;
+    --primary-dark: 230, 98%, 82%, 1;
+    --secondary: 35, 100%, 69%, 1;
+
+    --white-900: 0, 0%, 100%, 1;
+    --white-800: 215, 100%, 98%, 1;
+    --white-500: 235, 24%, 55%, 1;
+
+    --black-200: 217, 35%, 13%, 1;
+    --black-300: 217, 34%, 15%, 1;
+    --black-400: 218, 12%, 53%, 1;
+  }
+} */
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Headings */
+  .h1-bold {
+    @apply text-[32px] font-bold leading-[38.4px];
+  }
+  .h1-semibold {
+    @apply text-[32px] font-semibold leading-[38.4px] tracking-[-0.32px];
+  }
+  .h3-bold {
+    @apply text-[18px] font-extrabold leading-normal;
+  }
+  .h3-medium {
+    @apply text-[18px] font-medium leading-normal;
+  }
+
+  /* Body Base */
+  .body-base {
+    @apply text-[20px] font-normal leading-[40px];
+  }
+  .body-base-medium {
+    @apply text-[20px] font-semibold leading-[26px];
+  }
+  .body-base-semibold {
+    @apply text-[20px] font-semibold leading-[26px];
+  }
+  .body-base-bold {
+    @apply text-[20px] font-bold leading-[26px];
+  }
+
+  /* Paragraphs */
+  .p-bold {
+    @apply text-[16px] font-bold leading-normal tracking-[-0.32px];
+  }
+  .p-semibold {
+    @apply text-[16px] font-semibold leading-normal;
+  }
+  .p-medium {
+    @apply text-[16px] font-medium leading-[25.6px];
+  }
+
+  /* Body M */
+  .body-m {
+    @apply text-[14px] font-bold leading-normal;
+  }
+  .body-medium {
+    @apply text-[14px] font-medium leading-normal;
+  }
+  .body-regular {
+    @apply text-[14px] font-normal leading-[28px];
+  }
+
+  /* Body S */
+  .body-sm {
+    @apply text-[12px] font-normal leading-[20.4px];
+  }
+
+  .btn {
+    @apply text-white p-4 font-semibold rounded-xl leading-5 bg-primary-light dark:bg-primary-dark md:rounded-2xl;
+  }
+
+  .alt-btn {
+    @apply p-4 text-primary font-semibold rounded-xl leading-5 bg-white-800 dark:bg-black-300 md:rounded-2xl;
+  }
+
+  .flex-center {
+    @apply flex w-full justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex w-full justify-between;
+  }
+}
