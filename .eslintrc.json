@@ -3,6 +3,15 @@
     "next/core-web-vitals",
     "standard",
     "plugin:tailwindcss/recommended",
-    "prettier"
-  ]
+    "prettier"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "newlines-between": "always"
+      }
+    ]
+  }
 }

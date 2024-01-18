@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "echo 'Building Sanity to public/studio' && cd studio && npx @sanity/cli build ../public/studio -y && echo 'Done'",
     "build": "next build",
+    "sanity": "cd studio && sanity start",
     "start": "next start",
     "lint": "next lint"
   },
@@ -12,7 +14,18 @@
     "framer-motion": "^10.18.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "@portabletext/react": "^3.0.11",
+    "@sanity/cli": "^3.24.1",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.24.1",
+    "next": "14.0.4",
+    "next-sanity": "^7.0.10",
+    "next-sanity-image": "^6.1.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "sanity": "^3.24.1",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -27,6 +40,7 @@
     "postcss": "^8",
     "prettier": "^3.2.2",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
