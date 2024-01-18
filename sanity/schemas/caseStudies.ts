@@ -1,4 +1,4 @@
-export default {
+export const caseStudies = {
   name: 'caseStudies',
   title: 'Case Studies',
   type: 'document',
@@ -14,29 +14,19 @@ export default {
       ],
     },
     {
-      name: 'mission',
-      title: 'Mission',
-      type: 'string',
-    },
-    {
-      name: 'headline',
-      title: 'Headline',
-      type: 'string',
-    },
-    {
       name: 'summary',
       title: 'Summary',
-      type: 'string',
+      type: 'text',
     },
     {
-      name: 'process',
-      title: 'Process',
-      type: 'string',
+      name: 'challenges',
+      title: 'Process and Challenges',
+      type: 'text',
     },
     {
       name: 'result',
-      title: 'Result',
-      type: 'string',
+      title: 'Results and Lessons',
+      type: 'text',
     },
   ],
 };

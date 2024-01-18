@@ -1,4 +1,4 @@
-export default {
+export const projects = {
   name: 'projects',
   title: 'Projects',
   type: 'document',
@@ -32,12 +32,11 @@ export default {
         hotspot: true,
       },
     },
-
     {
       name: 'tags',
       title: 'Tags',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'skills'}]}],
+      of: [{ type: 'reference', to: [{ type: 'skills' }] }],
     },
   ],
-}
+};

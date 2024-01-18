@@ -1,4 +1,4 @@
-export default {
+export const testimonials = {
   name: 'testimonials',
   title: 'Testimonials',
   type: 'document',
@@ -27,4 +27,4 @@ export default {
       type: 'string',
     },
   ],
-}
+};
