@@ -13,17 +13,18 @@ const MobileMenu = ({
 }) => {
   return (
     <motion.div
-      initial={{ y: 100, opacity: 0 }}
+      initial={{ y: -200, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -200, opacity: 0 }}
       transition={{
-        duration: 0.3,
+        duration: 0.4,
         ease: 'easeOut',
       }}
       className='absolute right-[0.5px] top-2 z-20 w-[95vw] bg-white-900'
     >
       <div className='flex flex-col gap-6 p-4'>
         <div className='flex w-full justify-end'>
-          <button onClick={toggleMenu}>
+          <button aria-label='close' onClick={toggleMenu}>
             <CloseIcon />
           </button>
         </div>

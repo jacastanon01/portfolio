@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import {AnimatePresence} from 'framer-motion';
 
 import ThemeSwitch from '@/components/Theme';
 import HamburgerIcon from './HamburgerIcon';
@@ -20,9 +21,11 @@ const MobileNav = () => {
           <HamburgerIcon />
         </button>
       </div>
-      {isMenuOpen && (
-        <MobileMenu menuState={{ isMenuOpen, toggleMenu }} />
-      )}
+      <AnimatePresence mode='wait'>
+        {isMenuOpen && (
+          <MobileMenu menuState={{ isMenuOpen, toggleMenu }} />
+        )}
+        </AnimatePresence>
     </nav>
   );
 };

@@ -2,7 +2,7 @@ import MoonIcon from './MoonIcon';
 
 const ThemeSwitch = () => {
   return (
-    <div>
+    <div className='hover:cursor-pointer'>
       <MoonIcon />
     </div>
   );
