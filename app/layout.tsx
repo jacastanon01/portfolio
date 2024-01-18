@@ -4,8 +4,7 @@ import React from 'react';
 
 import './globals.css';
 import Navbar from '@/components/Navbar';
-
-import { ThemeProvider } from './context/ThemeProvider';
+import { ThemeProvider } from '@/context/ThemeProvider';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -24,14 +23,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <ThemeProvider>
-        <body
-          className={`${poppins.variable} min-h-screen bg-white-800 px-2 font-poppins dark:bg-black-300 sm:px-12`}
-        >
+      <body
+        className={`${poppins.variable} min-h-screen bg-white-800 px-4 font-poppins dark:bg-black-300 sm:px-12 md:px-24`}
+      >
+        <ThemeProvider>
           <Navbar />
           {children}
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

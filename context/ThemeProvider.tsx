@@ -8,14 +8,18 @@ import React, {
   useEffect,
 } from 'react';
 
-const ThemeContext = createContext();
+import { IThemeContext, ModeType } from '@/types';
+
+const ThemeContext = createContext<IThemeContext | undefined>(
+  undefined
+);
 
 export const ThemeProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [mode, setMode] = useState<'light' | 'dark'>();
+  const [mode, setMode] = useState<ModeType>('light');
 
   const themeCookie = getCookie('theme');
 
