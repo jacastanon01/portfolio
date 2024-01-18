@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { menu } from './menu';
-import { usePathname } from 'next/navigation';
 
 const NavMenuItems = () => {
   const pathname = usePathname();

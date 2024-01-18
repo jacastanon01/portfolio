@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import React from 'react';
+
 import NavMenuItems from '../NavMenuItems';
 import CloseIcon from './CloseIcon';
 import DownloadIcon from './DownloadIcon';
@@ -33,7 +34,7 @@ const MobileMenu = ({
         </div>
 
         <a
-          className='flex-center alt-btn gap-2 sm:text-black'
+          className='flex-center alt-btn hover: gap-2 hover:opacity-80 sm:text-black'
           href='/'
           download='resume'
         >

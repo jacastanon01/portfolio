@@ -1,6 +1,7 @@
 'use client';
 
 import ThemeSwitch from '@/components/Theme';
+
 import NavMenuItems from '../NavMenuItems';
 import DownloadIcon from '../mobile/DownloadIcon';
 
