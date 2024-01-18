@@ -5,6 +5,8 @@ import React from 'react';
 import './globals.css';
 import Navbar from '@/app/components/Navbar';
 
+import { ThemeProvider } from './context/ThemeProvider';
+
 const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-poppins',
@@ -22,12 +24,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body
-        className={`${poppins.variable} min-h-screen bg-white-800 px-2 font-poppins dark:bg-black-300 sm:px-12`}
-      >
-        <Navbar />
-        {children}
-      </body>
+      <ThemeProvider>
+        <body
+          className={`${poppins.variable} min-h-screen bg-white-800 px-2 font-poppins dark:bg-black-300 sm:px-12`}
+        >
+          <Navbar />
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
