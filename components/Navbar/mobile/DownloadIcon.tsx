@@ -4,8 +4,8 @@ import * as React from 'react';
 const DownloadIcon = () => (
   <svg
     width='24'
-    height='24'
-    viewBox='0 0 24 18'
+    height='20'
+    viewBox='0 0 20 16'
     fill='none'
     className='fill-gray-700 dark:fill-white-900'
     xmlns='http://www.w3.org/2000/svg'

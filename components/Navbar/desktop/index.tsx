@@ -12,11 +12,11 @@ const DesktopNav = () => {
         <div className='flex gap-6'>
           <NavMenuItems />
         </div>
-        <div className='flex select-none items-center gap-6'>
+        <div className='flex select-none items-center gap-6 dark:text-white-800'>
           <a
             download='resume'
             href='/public'
-            className='flex-center gap-1 text-black hover:cursor-pointer'
+            className='flex-center gap-1 text-gray-700 hover:cursor-pointer dark:text-white-800'
           >
             <div>
               <DownloadIcon />
