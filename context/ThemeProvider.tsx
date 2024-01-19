@@ -16,26 +16,30 @@ const ThemeContext = createContext<IThemeContext | undefined>(
 
 export const ThemeProvider = ({
   children,
+  defaultTheme,
 }: {
   children: React.ReactNode;
+  defaultTheme: string;
 }) => {
-  const [mode, setMode] = useState<ModeType>('light');
+  const [mode, setMode] = useState<ModeType>(
+    defaultTheme as ModeType
+  );
 
   const themeCookie = getCookie('theme');
 
-  function handleThemeChange() {
-    if (themeCookie === 'dark') {
-      setMode('light');
-      document.documentElement.classList.remove('dark');
-    } else {
-      setMode('dark');
-      document.documentElement.classList.add('dark');
-    }
-  }
-
   useEffect(() => {
+    function handleThemeChange() {
+      if (themeCookie === 'dark') {
+        setMode('dark');
+        document.documentElement.classList.add('dark');
+      } else {
+        setMode('light');
+        document.documentElement.classList.remove('dark');
+      }
+    }
+
     handleThemeChange();
-  }, [mode]);
+  }, [mode, themeCookie]);
 
   return (
     <ThemeContext.Provider value={{ mode, setMode }}>

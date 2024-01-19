@@ -21,7 +21,7 @@ const MobileMenu = ({
         duration: 0.4,
         ease: 'easeOut',
       }}
-      className='absolute right-[0.5px] top-2 z-20 w-[95vw] bg-white-900'
+      className='absolute right-[0.5px] top-2 z-20 w-full bg-white-900 dark:bg-black-200'
     >
       <div className='flex flex-col gap-6 p-4'>
         <div className='flex w-full justify-end'>

@@ -12,8 +12,7 @@ const ThemeSwitch = () => {
   const { mode, setMode } = useTheme();
 
   const setTheme = (theme: ModeType) => {
-    const themeCookie = theme === 'light' ? 'dark' : 'light';
-    setCookie('theme', themeCookie);
+    setCookie('theme', theme);
     setMode(theme);
   };
   return (
