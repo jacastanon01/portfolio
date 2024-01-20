@@ -5,6 +5,7 @@ import {
 } from 'next-sanity';
 import createImageUrlBuilder from '@sanity/image-url';
 import { PortableText as PortableTextComponent } from '@portabletext/react';
+import { useNextSanityImage } from 'next-sanity-image';
 
 import { config } from './config';
 import GetImage from './getImage';
@@ -20,54 +21,67 @@ export const urlFor = (source) =>
 export const imageBuilder = (source) =>
   createImageUrlBuilder(config).image(source);
 
-export const usePreviewSubscription =
-  createPreviewSubscriptionHook(config);
+export const ImageComponent = ({ data }) => {
+  const imageProps = useNextSanityImage(client, data.ref);
 
-// Barebones lazy-loaded image component
-const ImageComponent = ({ value }) => {
-  // const {width, height} = getImageDimensions(value)
   return (
     <Image
-      {...GetImage(value)}
-      blurDataURL={GetImage(value).blurDataURL}
-      objectFit='cover'
-      sizes='(max-width: 800px) 100vw, 800px'
-      alt={value.alt || ' '}
-      placeholder='blur'
-      loading='lazy'
+      alt={imageProps.src}
+      src={imageProps.src}
+      // placeholder='blur'
+      // blurDataURL={data.icon.asset.metadata.lqip}
+      // loader={imageProps.loader}
+      fill // layout="fill" prior to Next 13.0.0
+      className='object-contain'
     />
   );
 };
 
-const components = {
-  types: {
-    image: ImageComponent,
-    code: (props) => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
-    ),
-  },
-  marks: {
-    center: (props) => (
-      <div className='text-center'>{props.children}</div>
-    ),
-    highlight: (props) => (
-      <span className='font-bold text-brand-primary'>
-        {props.children}
-      </span>
-    ),
-    link: (props) => (
-      <a href={props?.value?.href} target='_blank' rel='noopener'>
-        {props.children}
-      </a>
-    ),
-  },
-};
-// Set up Portable Text serialization
-export const PortableText = (props) => (
-  <PortableTextComponent components={components} {...props} />
-);
+// Barebones lazy-loaded image component
+// export const ImageComponent = ({ value }) => {
+//   // const {width, height} = getImageDimensions(value)
+//   return (
+//     <Image
+//       {...GetImage(value)}
+//       blurDataURL={GetImage(value).blurDataURL}
+//       objectFit='cover'
+//       sizes='(max-width: 800px) 100vw, 800px'
+//       alt={value.alt || ' '}
+//       placeholder='blur'
+//       loading='lazy'
+//     />
+//   );
+// };
+
+// const components = {
+//   types: {
+//     image: ImageComponent,
+//     code: (props) => (
+//       <pre data-language={props.node.language}>
+//         <code>{props.node.code}</code>
+//       </pre>
+//     ),
+//   },
+//   marks: {
+//     center: (props) => (
+//       <div className='text-center'>{props.children}</div>
+//     ),
+//     highlight: (props) => (
+//       <span className='font-bold text-brand-primary'>
+//         {props.children}
+//       </span>
+//     ),
+//     link: (props) => (
+//       <a href={props?.value?.href} target='_blank' rel='noopener'>
+//         {props.children}
+//       </a>
+//     ),
+//   },
+// };
+// // Set up Portable Text serialization
+// export const PortableText = (props) => (
+//   <PortableTextComponent components={components} {...props} />
+// );
 
 export const client = createClient(config);
 

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { menu } from './menu';
+import { menu } from '@/constants';
 
 const NavMenuItems = () => {
   const pathname = usePathname();

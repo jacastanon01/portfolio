@@ -84,4 +84,8 @@
   .flex-between {
     @apply flex w-full justify-between;
   }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-indigo-400 from-20% to-primary inline-block text-transparent bg-clip-text;
+  }
 }

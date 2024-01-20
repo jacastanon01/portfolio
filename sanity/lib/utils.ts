@@ -1,10 +1,35 @@
-import client from './sanity';
-import getImage from './getImage';
+import { createClient } from 'next-sanity';
+
+import { config } from './config';
+
+export const client = createClient(config);
+
+//* HOME PAGE *\\
+export const fetchSpecificSkills = async <T extends String>(
+  skill: T | T[]
+) => {
+  const fetchedSkills = await client.fetch<any[]>(
+    `*[_type == "skills" && name ${
+      Array.isArray(skill) && !(skill instanceof String)
+        ? `in [${skill.map((skill) => `"${skill}"`).join(', ')}]`
+        : `match ${skill.trim()}`
+    }]{
+      ...,
+      "ref": icon.asset._ref
+    }`
+  );
+
+  if (!fetchedSkills) {
+    console.error('Error fetching those skill', fetchedSkills);
+    return null;
+  }
+
+  return fetchedSkills;
+};
 
 //* PROJECT PAGE *\\
-export const fetchProjects = await client.fetch<any[]>(
-  `*[_type == "projects"]`
-);
+export const fetchProjects = async () =>
+  await client.fetch<any[]>(`*[_type == "projects"]`);
 
 export const fetchProjectCardInfo = async (projectId: string) => {
   const projectCardInfo = await client.fetch<
