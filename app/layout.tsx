@@ -6,6 +6,7 @@ import { cookies } from 'next/headers';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/context/ThemeProvider';
+import Footer from '@/components/Footer';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -32,11 +33,14 @@ export default function RootLayout({
   return (
     <html lang='en' className={theme?.value}>
       <body
-        className={`${poppins.variable} ${figtree.variable} min-h-screen bg-white-800 px-2 font-poppins dark:bg-black-300 dark:text-white-800 sm:px-6 lg:px-20`}
+        className={`${poppins.variable} ${figtree.variable} flex-between min-h-screen flex-col bg-white-800 px-2 font-poppins dark:bg-black-300 dark:text-white-800 sm:px-6 lg:px-20`}
       >
         <ThemeProvider defaultTheme={theme?.value || ''}>
-          <Navbar />
-          {children}
+          <section>
+            <Navbar />
+            {children}
+          </section>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

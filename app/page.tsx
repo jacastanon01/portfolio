@@ -26,12 +26,19 @@ export default async function Home() {
           Welcome
         </h1>
         <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
-          <p className='text-center text-xl lg:text-start xl:text-3xl'>
+          <p className='text-center font-figtree text-xl lg:text-start xl:text-3xl'>
             My name is <span className='text-gradient'>Jacob</span>! I
             believe in leveraging the power of code to make a{' '}
             <span className='text-gradient'>positive impact </span>{' '}
             and help others. I am dedicated to crafting solutions that
-            contribute to a better, more connected world.
+            contribute to a better, more connected world.{' '}
+            <Link
+              href='/projects'
+              className=' border-b-2 border-orange-400 transition hover:text-orange-400 hover:duration-300'
+            >
+              Click here
+            </Link>{' '}
+            to see what I've been working on lately.
           </p>
           <Image
             src='/assets/dev.png'
