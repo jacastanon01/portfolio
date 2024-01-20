@@ -23,7 +23,7 @@ const AboutSection = async () => {
         <Link
           aria-roledescription='Link to my work'
           href='/projects'
-          className=' border-b-2 border-orange-400 transition hover:text-orange-400 hover:duration-300'
+          className=' border-b-2 border-orange-400 hover:text-orange-400 hover:duration-300'
         >
           Click here
         </Link>{' '}
