@@ -1,27 +1,21 @@
 import { createClient } from 'next-sanity';
 
+import { IProjectCard, ISkillIcon } from '@/types';
+
 import { config } from './config';
 
 export const client = createClient(config);
 
 //* HOME PAGE *\\
-export const fetchSpecificSkills = async <T extends String>(
-  skill: T | T[]
-) => {
-  const fetchedSkills = await client.fetch<any[]>(
-    `*[_type == "skills" && name ${
-      Array.isArray(skill) && !(skill instanceof String)
-        ? `in [${skill.map((skill) => `"${skill}"`).join(', ')}]`
-        : `match ${skill.trim()}`
-    }]{
-      ...,
-      "ref": icon.asset._ref
+export const fetchMainSkillsForHomePage = async () => {
+  const fetchedSkills = await client.fetch<ISkillIcon[]>(
+    `*[ _type == "skills" && isMain == true]{
+      name, bgColor, "url": icon.asset->url 
     }`
   );
 
   if (!fetchedSkills) {
-    console.error('Error fetching those skill', fetchedSkills);
-    return null;
+    throw Error('Error fetching skills', fetchedSkills);
   }
 
   return fetchedSkills;
@@ -29,11 +23,20 @@ export const fetchSpecificSkills = async <T extends String>(
 
 //* PROJECT PAGE *\\
 export const fetchProjects = async () =>
-  await client.fetch<any[]>(`*[_type == "projects"]`);
+  await client.fetch(`*[_type == "projects"]{
+    name,
+    description,
+    "img": imgUrl.asset->url,
+    skills[]->{
+      name,    
+      bgColor,
+      "url": icon.asset.->url
+    }
+  }`);
 
 export const fetchProjectCardInfo = async (projectId: string) => {
   const projectCardInfo = await client.fetch<
-    any[]
+    IProjectCard[]
   >(`*[_id == ${projectId}]{
     name,
     description,
@@ -41,16 +44,9 @@ export const fetchProjectCardInfo = async (projectId: string) => {
   }`);
 
   if (!projectCardInfo) {
-    console.error('Error fetching card info', projectCardInfo);
-    return null;
+    throw Error('Error fetching card info', projectCardInfo);
   }
   return projectCardInfo;
 };
 
 //* CASE STUDY PAGE *\\
-export const fetchProjectDetailsForCaseStudy = async (
-  projectId: string
-) => {
-  const projectInfo = await fetchProjectCardInfo(projectId);
-  const caseStudy = await client.fetch<any[]>(``);
-};

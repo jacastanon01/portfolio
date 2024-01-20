@@ -9,6 +9,11 @@ export const skills = {
       type: 'string',
     },
     {
+      name: 'isMain',
+      title: 'Display on home',
+      type: 'boolean',
+    },
+    {
       name: 'bgColor',
       title: 'BgColor',
       type: 'string',

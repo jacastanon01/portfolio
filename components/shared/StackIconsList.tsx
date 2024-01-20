@@ -1,26 +1,26 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { urlFor } from '@/sanity/lib/sanity';
+import { ISkillIcon } from '@/types';
 
-const StackIconsList = ({ skills }: { skills: any[] }) => {
+const StackIconsList = ({ skills }: { skills: ISkillIcon[] }) => {
   return (
-    <ul className='flex flex-wrap gap-12'>
+    <>
       {skills?.map((skill) => (
-        <li
-          key={skill.ref}
-          className='relative size-6 sm:size-10 xl:size-14'
+        <div
+          key={skill.url}
+          className='relative size-10 sm:size-12 lg:size-10 '
         >
           {/* <ImageComponent data={skill} /> */}
           <Image
-            src={urlFor(skill.ref).url()}
+            src={skill.url}
             alt={skill.name}
             fill
-            className={`rounded-lg shadow-lg dark:shadow-sm dark:shadow-white-500`}
+            className={`rounded-lg bg-white-800 shadow-lg dark:shadow-sm dark:shadow-white-500`}
           />
-        </li>
+        </div>
       ))}
-    </ul>
+    </>
   );
 };
 
