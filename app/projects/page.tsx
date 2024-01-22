@@ -34,7 +34,7 @@ export default async function ProjectPage() {
         </p>
       </section>
 
-      <section className='grid min-h-screen min-w-96 gap-16 md:grid-cols-2'>
+      <section className='grid min-h-screen w-[70vh] gap-16 md:grid-cols-2 xl:w-[90vw]'>
         {projects.map((project, i) => (
           <ProjectCard
             key={project.title}
