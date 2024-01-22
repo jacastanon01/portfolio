@@ -1,16 +1,14 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { fetchProjects } from '@/sanity/lib/utils';
-import SkillIcon from '@/components/shared/SkillIcon';
 import ProjectCard from '@/components/ProjectPage/ProjectCard';
 
 export default async function ProjectPage() {
   const projects = await fetchProjects();
-  const githubLogo = projects[0].skills.filter(
-    (skill) => skill.name === 'Github'
-  )[0];
+
   return (
-    <div className='flex-center flex-col gap-12'>
+    <div className='flex-center flex-col'>
       <section className='mb-12 text-center lg:max-w-[800px]'>
         <h1 className='text-gradient text-[64px] font-medium leading-tight -tracking-wider'>
           My projects
@@ -18,23 +16,25 @@ export default async function ProjectPage() {
         <p className='mt-6 max-w-md font-figtree font-medium leading-normal tracking-tight text-white-500'>
           Click on any case study or check out my
           <Link
-            className='hover:text-stroke inline-flex size-fit items-center gap-1 rounded-lg from-primary-dark to-primary px-2 pl-1 leading-normal tracking-normal shadow-md outline-1 hover:bg-gradient-to-r hover:text-white-800'
+            className='hover:text-stroke inline-flex size-fit items-center justify-center gap-1 rounded-lg from-primary-dark to-primary px-2 pl-1 leading-normal tracking-normal shadow-md outline-1 hover:bg-gradient-to-r hover:text-white-800'
             href='https://github.com/jacastanon01'
             target='_blank'
           >
             github
             <span className='relative size-4'>
-              <SkillIcon
-                className='object-contain'
-                icon={githubLogo}
+              <Image
+                src={'/assets/github.svg'}
+                alt={'github'}
+                fill
+                className={`rounded-lg bg-white-800 shadow-lg dark:shadow-sm dark:shadow-white-500`}
               />
             </span>
-          </Link>{' '}
+          </Link>
           to see my recent work
         </p>
       </section>
 
-      <section className='grid min-h-screen w-[70vh] gap-16 md:grid-cols-2 xl:w-[90vw]'>
+      <section className='flex min-h-screen w-full flex-col'>
         {projects.map((project, i) => (
           <ProjectCard
             key={project.title}

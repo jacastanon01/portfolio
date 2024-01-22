@@ -25,7 +25,7 @@ export const fetchMainSkillsForHomePage = async () => {
 export const fetchProjects = async () =>
   await client.fetch<
     (IProjectCard & { skills: ISkillIcon[] })[]
-  >(`*[_type == "projects"]{
+  >(`*[_type == "projects"] | order(_createdAt asc) {
     title,
     description,
     "img": imgUrl.asset->url,
