@@ -33,8 +33,8 @@ export const projects = {
       },
     },
     {
-      name: 'tags',
-      title: 'Tags',
+      name: 'skills',
+      title: 'Skills',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'skills' }] }],
     },

@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         poppins: ['var(--font-poppins)', 'sans-serif'],
+        figtree: ['var(--font-figtree)', 'sans-serif'],
       },
       colors: {
         'blue-violet': {

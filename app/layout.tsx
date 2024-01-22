@@ -1,16 +1,22 @@
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Poppins, Figtree } from 'next/font/google';
 import React from 'react';
 import { cookies } from 'next/headers';
 
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/context/ThemeProvider';
+import Footer from '@/components/Footer';
 
 const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-poppins',
-  weight: ['400', '700', '900'],
+  weight: ['500', '600', '700', '900'],
+});
+
+const figtree = Figtree({
+  subsets: ['latin'],
+  variable: '--font-figtree',
 });
 
 export const metadata: Metadata = {
@@ -27,11 +33,14 @@ export default function RootLayout({
   return (
     <html lang='en' className={theme?.value}>
       <body
-        className={`${poppins.variable} min-h-screen bg-white-800 px-4 font-poppins dark:bg-black-300 sm:px-12 md:px-24`}
+        className={`${poppins.variable} ${figtree.variable} flex-between min-h-screen flex-col bg-white-800 px-2 font-poppins dark:bg-black-300 dark:text-white-800 sm:px-6 lg:px-20`}
       >
         <ThemeProvider defaultTheme={theme?.value || ''}>
-          <Navbar />
-          {children}
+          <main>
+            <Navbar />
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

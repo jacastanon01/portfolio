@@ -12,3 +12,12 @@ export const menu = [
     href: '/contact',
   },
 ];
+
+export const mainSkills = [
+  'React',
+  'Javascript',
+  'Typescript',
+  'Git',
+  'Nextjs',
+  'Nodejs',
+];
