@@ -39,7 +39,7 @@ const ProjectCard = ({
 
   return (
     <MotionDiv
-      className={`${index % 2 === 0 ? 'col-start-[-1] col-end-[-1]' : 'col-span-full bg-red-50'} h-[70vh] w-full bg-white-800 dark:bg-primary`}
+      className={`${index % 2 === 0 ? 'col-start-[-1] col-end-[-1]' : 'col-span-full'} h-[70vh] w-full bg-white-800 dark:bg-primary`}
       ref={ref}
       initial='hidden'
       animate={controls}

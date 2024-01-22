@@ -11,8 +11,8 @@ export default async function ProjectPage() {
   )[0];
   return (
     <div className='flex-center flex-col gap-12'>
-      <section className='mb-12 lg:max-w-[800px]'>
-        <h1 className='text-gradient text-4xl font-medium leading-tight -tracking-wider sm:text-[64px]'>
+      <section className='mb-12 text-center lg:max-w-[800px]'>
+        <h1 className='text-gradient text-[64px] font-medium leading-tight -tracking-wider'>
           My projects
         </h1>
         <p className='mt-6 max-w-md font-figtree font-medium leading-normal tracking-tight text-white-500'>
