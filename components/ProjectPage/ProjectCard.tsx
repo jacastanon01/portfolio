@@ -46,13 +46,13 @@ const ProjectCard = ({
 
   return (
     <MotionDiv
-      className={`${index % 2 === 0 ? 'self-start' : 'self-end'} h-[70vh] p-4`}
+      className={`${index % 2 === 0 ? 'self-start' : 'self-end'} h-[50vh] p-4 lg:h-[70vh]`}
       ref={ref}
       initial={isMedium ? 'hidden' : 'visible'}
       animate={controls}
       variants={projectCardVariants(index)}
     >
-      <div className='flex-center h-full max-w-[600px] flex-col'>
+      <div className='flex-center h-96 max-w-[600px] flex-col lg:h-full'>
         <Link
           href={`/projects/${project.title}`}
           className='relative size-full'
