@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import { IProjectCard } from '@/types';
+import type { IProjectCard } from '@/types';
 
 import { MotionDiv } from '../Motion';
 
