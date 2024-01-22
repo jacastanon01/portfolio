@@ -10,8 +10,8 @@ export default async function ProjectPage() {
     (skill) => skill.name === 'Github'
   )[0];
   return (
-    <div className='flex-center flex-col'>
-      <section className='lg:max-w-[800px]'>
+    <div className='flex-center flex-col gap-12'>
+      <section className='mb-12 lg:max-w-[800px]'>
         <h1 className='text-gradient text-[64px] font-medium leading-tight -tracking-wider'>
           My projects
         </h1>
@@ -28,7 +28,7 @@ export default async function ProjectPage() {
         </p>
       </section>
 
-      <section className='flex min-h-screen w-full flex-col justify-around'>
+      <section className='grid min-h-screen min-w-96 gap-16 md:grid-cols-2'>
         {projects.map((project, i) => (
           <ProjectCard
             key={project.title}

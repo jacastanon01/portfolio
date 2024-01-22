@@ -9,8 +9,11 @@ import { IProjectCard } from '@/types';
 import { MotionDiv } from '../Motion';
 
 const projectCardVariants = (index: number) => ({
-  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-  hidden: { opacity: 0, x: index % 2 === 0 ? -300 : 300 },
+  visible: { x: 0, transition: { duration: 1 } },
+  hidden: {
+    x: index % 2 === 0 ? -300 : 300,
+    transition: { duration: 1 },
+  },
 });
 
 const ProjectCard = ({
@@ -20,10 +23,10 @@ const ProjectCard = ({
   project: IProjectCard;
   index: number;
 }) => {
-  const [ref, isInView] = useInView();
+  const [ref, isInView] = useInView({
+    threshold: 1,
+  });
   const controls = useAnimation();
-
-  console.log(project, 'project card!!!!x');
 
   useEffect(() => {
     if (isInView) {
@@ -35,13 +38,13 @@ const ProjectCard = ({
 
   return (
     <MotionDiv
-      className='size-full'
+      className={`col-span-2 size-full bg-white-800 dark:bg-primary`}
       ref={ref}
       initial='hidden'
       animate={controls}
       variants={projectCardVariants(index)}
     >
-      {project.title}
+      <div className='size-full'>{project.title}</div>
     </MotionDiv>
   );
 };
