@@ -34,7 +34,7 @@ export default async function ProjectPage() {
         </p>
       </section>
 
-      <section className='flex min-h-screen w-full flex-col'>
+      <section className='flex w-full flex-col '>
         {projects.map((project, i) => (
           <ProjectCard
             key={project.title}
