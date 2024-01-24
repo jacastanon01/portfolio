@@ -23,15 +23,17 @@ export const fetchMainSkillsForHomePage = async () => {
 
 //* PROJECT PAGE *\\
 export const fetchProjects = async () =>
-  await client.fetch(`*[_type == "projects"]{
-    name,
+  await client.fetch<
+    (IProjectCard & { skills: ISkillIcon[] })[]
+  >(`*[_type == "projects"] | order(_createdAt asc) {
+    title,
     description,
     "img": imgUrl.asset->url,
     skills[]->{
       name,    
       bgColor,
-      "url": icon.asset.->url
-    }
+      "url": icon.asset->url
+    },
   }`);
 
 export const fetchProjectCardInfo = async (projectId: string) => {

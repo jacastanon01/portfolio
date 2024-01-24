@@ -6,10 +6,10 @@ export const caseStudies = {
     {
       name: 'project',
       type: 'reference',
+      title: 'Project',
       to: [
         {
           type: 'projects',
-          title: 'Project',
         },
       ],
     },

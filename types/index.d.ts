@@ -13,7 +13,7 @@ export interface ISkillIcon {
 }
 
 export interface IProjectCard {
-  name: string;
+  title: string;
   img: string;
   description: string;
 }

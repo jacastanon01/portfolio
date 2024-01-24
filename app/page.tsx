@@ -4,7 +4,7 @@ import HeroSection from '@/components/Home/HeroSection';
 
 export default function Home() {
   return (
-    <div className='my-16 max-sm:px-6'>
+    <div className='max-sm:px-6'>
       <MotionDiv
         initial={{ opacity: 0 }}
         animate={{
