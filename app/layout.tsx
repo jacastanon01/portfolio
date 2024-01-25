@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang='en' className={theme?.value}>
       <body
-        className={`${poppins.variable} ${figtree.variable} flex-between min-h-screen flex-col bg-white-800 px-2 font-poppins dark:bg-black-300 dark:text-white-800 sm:px-6 lg:px-20`}
+        className={`${poppins.variable} ${figtree.variable} flex-between min-h-screen flex-col bg-white-800  px-6 font-poppins dark:bg-black-300 dark:text-white-800 md:px-12 lg:px-20`}
       >
         <ThemeProvider defaultTheme={theme?.value || ''}>
           <main>

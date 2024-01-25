@@ -1,6 +1,7 @@
 import { createClient } from 'next-sanity';
 
-import { IProjectCard, ISkillIcon } from '@/types';
+import { ICaseStudy, IProjectCard, ISkillIcon } from '@/types';
+import { caseStudyTitles } from '@/constants';
 
 import { config } from './config';
 
@@ -52,3 +53,26 @@ export const fetchProjectCardInfo = async (projectId: string) => {
 };
 
 //* CASE STUDY PAGE *\\
+export const fetchCaseStudyByProject = async (name: string) => {
+  const project =
+    await client.fetch<ICaseStudy>(`*[_type == 'caseStudies' && defined(project) && project->_type == 'projects' && project->name == ${name}][0]{
+    project->{
+      title,
+      description,
+      "img": imgUrl.asset->url,
+      codeLink,
+      projectLink
+    },
+    summary,
+    challenges,
+    result,
+    "summaryTitle": '${caseStudyTitles.summary}',
+    "challengesTitle": '${caseStudyTitles.challenges}',
+    "resultTitle": '${caseStudyTitles.result}',
+  }`);
+
+  if (!project)
+    console.error('Error fetching project by name', project);
+
+  return project;
+};

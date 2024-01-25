@@ -21,3 +21,9 @@ export const mainSkills = [
   'Nextjs',
   'Nodejs',
 ];
+
+export const caseStudyTitles = {
+  summary: 'Overview',
+  challenges: 'Process & Challenges',
+  result: 'Results & Lessons',
+};

@@ -14,7 +14,8 @@ const NavMenuItems = () => {
           key={item.href}
           href={item.href}
           className={`py-2 max-sm:px-4 ${
-            pathname === item.href
+            pathname === item.href ||
+            (pathname.startsWith(item.href) && item.href !== '/')
               ? 'text-stroke text-primary dark:text-primary-dark max-sm:rounded-3xl max-sm:bg-primary max-sm:text-white-800 max-sm:dark:bg-primary-dark max-sm:dark:text-white-900'
               : 'text-slate-500 dark:text-white-800'
           }`}
