@@ -37,6 +37,7 @@ const ContactForm = () => {
       className='flex flex-col space-y-4 border-[0.8px] border-dashed border-white-500 p-4'
     >
       <input
+        required
         max={50}
         autoComplete='off'
         type='text'
