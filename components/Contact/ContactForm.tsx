@@ -59,7 +59,11 @@ const ContactForm = () => {
         placeholder='Drop me a message to collaborate or just say hi :)'
         className='input'
       />
-      <button type='submit' aria-label='Send Message'>
+      <button
+        className='self-center rounded-lg px-4 py-2 font-bold text-white-500 transition-all duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-primary hover:to-primary-dark hover:text-white-800'
+        type='submit'
+        aria-label='Send Message'
+      >
         Submit
       </button>
       <ToastContainer />
