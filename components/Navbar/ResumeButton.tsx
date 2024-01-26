@@ -15,7 +15,7 @@ const ResumeButton = async ({
   return (
     <a
       target='_blank'
-      download='resume'
+      download='jacob-castanon-resume'
       href={url}
       className={className}
     >
