@@ -14,9 +14,11 @@ export default async function ProjectPage() {
           My projects
         </h1>
         <p className='mt-6 max-w-md font-figtree font-medium leading-normal tracking-tight text-white-500'>
-          Click on any case study or check out my
+          As a continuous learner, I am always look for ways to
+          improve and enhance my skills. Click on any case study or
+          check out my{' '}
           <Link
-            className='hover:text-stroke inline-flex size-fit items-center justify-center gap-1 rounded-lg from-primary-dark to-primary px-2 pl-1 leading-normal tracking-normal shadow-md outline-1 hover:bg-gradient-to-r hover:text-white-800'
+            className='hover:text-stroke inline-flex size-fit items-center justify-center gap-1 rounded-lg from-primary-dark to-primary pl-1 leading-normal tracking-normal shadow-md outline-1 hover:bg-gradient-to-r hover:text-white-800'
             href='https://github.com/jacastanon01'
             target='_blank'
           >
@@ -29,8 +31,8 @@ export default async function ProjectPage() {
                 className={`rounded-lg bg-white-800 shadow-lg dark:shadow-sm dark:shadow-white-500`}
               />
             </span>
-          </Link>
-          to see my recent work
+          </Link>{' '}
+          to see my recent work and let me know what you think!
         </p>
       </section>
 
