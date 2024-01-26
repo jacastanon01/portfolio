@@ -3,15 +3,20 @@
 import { revalidatePath } from 'next/cache';
 import { Resend } from 'resend';
 
+import { client } from '@/sanity/lib/client';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
+  const myEmail = await client.fetch(
+    `*[_type == "personalInfo"][0]{email}`
+  );
   const senderEmail = formData.get('senderEmail') as string;
   const senderName = formData.get('senderName') as string;
   const message = formData.get('message') as string;
   try {
     const data = await resend.emails.send({
-      to: 'jacastanon01@gmail.com',
+      to: myEmail.email,
       from: 'Contact Form <onboarding@resend.dev>',
       subject: `${senderName} sent you a message!`,
       text: message,
