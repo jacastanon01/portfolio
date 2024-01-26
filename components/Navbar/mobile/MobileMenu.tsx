@@ -5,7 +5,7 @@ import React from 'react';
 
 import NavMenuItems from '../NavMenuItems';
 import CloseIcon from './CloseIcon';
-import DownloadIcon from './DownloadIcon';
+import ResumeButton from '../ResumeButton';
 
 const MobileMenu = ({
   menuState: { isMenuOpen, toggleMenu },
@@ -33,16 +33,9 @@ const MobileMenu = ({
           <NavMenuItems />
         </div>
 
-        <a
-          className='flex-center alt-btn hover: gap-2 hover:opacity-80 sm:text-black'
-          href='/'
-          download='resume'
-        >
-          <div className='self-center'>
-            <DownloadIcon />
-          </div>
+        <ResumeButton className='flex-center alt-btn hover: gap-2 hover:opacity-80 sm:text-black'>
           Resume
-        </a>
+        </ResumeButton>
       </div>
     </motion.div>
   );

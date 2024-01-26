@@ -1,9 +1,7 @@
-'use client';
-
 import ThemeSwitch from '@/components/Theme';
 
 import NavMenuItems from '../NavMenuItems';
-import DownloadIcon from '../mobile/DownloadIcon';
+import ResumeButton from '../ResumeButton';
 
 const DesktopNav = () => {
   return (
@@ -13,16 +11,9 @@ const DesktopNav = () => {
           <NavMenuItems />
         </div>
         <div className='flex select-none items-center gap-6 dark:text-white-800'>
-          <a
-            download='resume'
-            href='/public'
-            className='flex-center gap-1 text-gray-700 hover:cursor-pointer dark:text-white-800'
-          >
-            <div>
-              <DownloadIcon />
-            </div>
+          <ResumeButton className='flex-center gap-1 text-gray-700 hover:cursor-pointer dark:text-white-800'>
             Resume
-          </a>
+          </ResumeButton>
           |
           <ThemeSwitch />
         </div>

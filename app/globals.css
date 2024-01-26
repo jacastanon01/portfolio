@@ -17,9 +17,17 @@
     --black-200: 217, 35%, 13%, 1;
     --black-300: 217, 34%, 15%, 1;
     --black-400: 218, 12%, 53%, 1;
+
+    --toastify-color-light: 215, 100%, 98%, 1;
+    --toastify-color-dark: 217, 35%, 13%, 1;
   }
 
   .text-stroke {
     -webkit-text-stroke: 1px;
+  }
+
+  .min-h-screen {
+    min-height: 100svh;
+    min-height: 100vh;
   }
 }

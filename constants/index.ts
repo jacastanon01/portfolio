@@ -13,6 +13,19 @@ export const menu = [
   },
 ];
 
+export const socials = [
+  {
+    title: 'Github',
+    href: 'https://github.com/jacastanon01',
+    icon: './assets/github.svg',
+  },
+  {
+    title: 'Linkedin',
+    href: 'https://www.linkedin.com/in/jacob-castanon-b76490168/',
+    icon: './assets/linkedin.svg',
+  },
+];
+
 export const mainSkills = [
   'React',
   'Javascript',
