@@ -4,7 +4,7 @@ import Socials from '@/components/Contact/Socials';
 
 export default function ContactPage() {
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen w-full'>
       <div className='flex-center'>
         <div className='flex flex-col justify-between lg:max-w-[800px]'>
           <section className='text-center'>
