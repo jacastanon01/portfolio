@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -29,7 +30,9 @@ const ContactForm = () => {
     }
   }
   return (
-    <form
+    <motion.form
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.3 } }}
       onSubmit={handleSubmit}
       autoComplete='off'
       className='flex flex-col space-y-4 border-[0.8px] border-dashed border-white-500 p-4'
@@ -66,7 +69,7 @@ const ContactForm = () => {
         Submit
       </button>
       <ToastContainer />
-    </form>
+    </motion.form>
   );
 };
 
