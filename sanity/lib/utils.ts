@@ -7,6 +7,20 @@ import { config } from './config';
 
 export const client = createClient(config);
 
+export const fetchResumeFromPersonalInfo = async () => {
+  const fetchedResume = await client.fetch<{ url: string }>(
+    `*[_type == 'personalInfo'][0]{
+      "url": resume.asset->url
+    }`
+  );
+
+  if (!fetchedResume) {
+    throw Error('Error fetching resume', fetchedResume);
+  }
+
+  return fetchedResume;
+};
+
 //* HOME PAGE *\\
 export const fetchMainSkillsForHomePage = async () => {
   const fetchedSkills = await client.fetch<ISkillIcon[]>(

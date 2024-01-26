@@ -88,4 +88,12 @@
   .text-gradient {
     @apply bg-gradient-to-r leading-tight from-indigo-400 from-20% to-primary inline-block text-transparent bg-clip-text;
   }
+
+  .input {
+    @apply w-full p-4 font-figtree rounded-xl bg-gray-100 dark:bg-black-200 md:rounded-2xl text-primary font-medium dark:text-white-800 active:border-none active:outline-none focus:outline-none;
+  }
+
+  .input::placeholder {
+    @apply text-primary-dark font-normal tracking-wide font-figtree;
+  }
 }
