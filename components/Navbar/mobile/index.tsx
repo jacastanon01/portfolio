@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import {AnimatePresence} from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 import ThemeSwitch from '@/components/Theme';
 
@@ -8,7 +8,7 @@ import HamburgerIcon from './HamburgerIcon';
 import MobileMenu from './MobileMenu';
 
 const MobileNav = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   function toggleMenu() {
     setIsMenuOpen((prev) => !prev);
@@ -26,7 +26,7 @@ const MobileNav = () => {
         {isMenuOpen && (
           <MobileMenu menuState={{ isMenuOpen, toggleMenu }} />
         )}
-        </AnimatePresence>
+      </AnimatePresence>
     </nav>
   );
 };

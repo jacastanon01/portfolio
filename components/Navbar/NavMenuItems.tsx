@@ -4,9 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { menu } from '@/constants';
+import { useMediumQuery } from '@/hooks/useMediaQuery';
 
 const NavMenuItems = () => {
   const pathname = usePathname();
+  const isMedium = useMediumQuery();
   return (
     <>
       {menu.map((item) => (
@@ -21,6 +23,11 @@ const NavMenuItems = () => {
           }`}
         >
           {item.title}
+          {pathname === item.href && isMedium && (
+            <span className='flex-center relative'>
+              <div className='size-2 animate-pulse rounded-full bg-primary dark:bg-primary-dark' />
+            </span>
+          )}
         </Link>
       ))}
     </>
