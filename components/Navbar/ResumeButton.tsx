@@ -1,22 +1,31 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 
 import { fetchResumeFromPersonalInfo } from '@/sanity/lib/utils';
 
 import DownloadIcon from './mobile/DownloadIcon';
 
-const ResumeButton = async ({
+const ResumeButton = ({
   children,
   className,
 }: {
   children: React.ReactNode;
   className?: string;
 }) => {
-  const { url } = await fetchResumeFromPersonalInfo();
+  const [url, setUrl] = useState('');
+  useEffect(() => {
+    async function fetchResume() {
+      const { url } = await fetchResumeFromPersonalInfo();
+      setUrl(url);
+    }
+    fetchResume();
+  }, []);
   return (
     <a
       target='_blank'
       download='jacob-castanon-resume'
-      href={url}
+      href={`${url}?dl`}
       className={className}
     >
       <div>

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import {AnimatePresence} from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 import ThemeSwitch from '@/components/Theme';
 
@@ -23,10 +23,8 @@ const MobileNav = () => {
         </button>
       </div>
       <AnimatePresence mode='wait'>
-        {isMenuOpen && (
-          <MobileMenu menuState={{ isMenuOpen, toggleMenu }} />
-        )}
-        </AnimatePresence>
+        {isMenuOpen && <MobileMenu toggleMenu={toggleMenu} />}
+      </AnimatePresence>
     </nav>
   );
 };
