@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "echo 'Building Sanity to public/studio' && cd studio && npx @sanity/cli build ../public/studio -y && echo 'Done'",
+    "prebuild": "echo 'Building Sanity to public/sanity' && cd sanity && npx @sanity/cli build ../public/sanity -y && echo 'Done'",
     "build": "next build",
     "sanity": "cd studio && sanity start",
     "start": "next start",

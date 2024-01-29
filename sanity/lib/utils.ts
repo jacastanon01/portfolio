@@ -68,9 +68,8 @@ export const fetchProjectCardInfo = async (projectId: string) => {
 
 //* CASE STUDY PAGE *\\
 export const fetchCaseStudyByProject = async (name: string) => {
-  console.log({ name });
   const project =
-    await client.fetch<ICaseStudy>(`*[_type == 'caseStudies' && defined(project) && project->_type == 'projects' && project->name == ${name}][0]{
+    await client.fetch<ICaseStudy>(`*[_type == 'caseStudies' && project->title == '${name}'][0]{
     project->{
       title,
       description,
@@ -90,8 +89,6 @@ export const fetchCaseStudyByProject = async (name: string) => {
     "challengesTitle": '${caseStudyTitles.challenges}',
     "resultTitle": '${caseStudyTitles.result}',
   }`);
-
-  console.log({ project });
 
   if (!project)
     console.error('Error fetching project by name', project);

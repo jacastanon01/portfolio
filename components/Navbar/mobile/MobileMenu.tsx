@@ -7,11 +7,7 @@ import NavMenuItems from '../NavMenuItems';
 import CloseIcon from './CloseIcon';
 import ResumeButton from '../ResumeButton';
 
-const MobileMenu = ({
-  menuState: { isMenuOpen, toggleMenu },
-}: {
-  menuState: { isMenuOpen: boolean; toggleMenu: () => void };
-}) => {
+const MobileMenu = ({ toggleMenu }: { toggleMenu: () => void }) => {
   return (
     <motion.div
       initial={{ y: -200, opacity: 0 }}
@@ -32,7 +28,6 @@ const MobileMenu = ({
         <div className='flex-between flex-col gap-2'>
           <NavMenuItems />
         </div>
-
         <ResumeButton className='flex-center alt-btn hover: gap-2 hover:opacity-80 sm:text-black'>
           Resume
         </ResumeButton>

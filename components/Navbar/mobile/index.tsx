@@ -23,9 +23,7 @@ const MobileNav = () => {
         </button>
       </div>
       <AnimatePresence mode='wait'>
-        {isMenuOpen && (
-          <MobileMenu menuState={{ isMenuOpen, toggleMenu }} />
-        )}
+        {isMenuOpen && <MobileMenu toggleMenu={toggleMenu} />}
       </AnimatePresence>
     </nav>
   );
