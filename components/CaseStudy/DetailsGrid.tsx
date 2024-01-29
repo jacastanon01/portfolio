@@ -9,11 +9,11 @@ const DetailsGrid = ({ caseStudy }: { caseStudy: ICaseStudy }) => {
       {['summary', 'challenges', 'result'].map((section) => (
         <section key={section} className='grid grid-cols-4'>
           <div className='col-span-1 hidden items-center lg:flex'>
-            <h2 className='text-xl text-primary font-semibold'>
+            <h2 className='text-xl font-semibold text-primary'>
               {caseStudy[section + 'Title']}
             </h2>
           </div>
-          <div className='col-span-4 border-t border-t-primary-dark pt-4 lg:col-span-3 lg:border-none'>
+          <div className='col-span-4 whitespace-pre-wrap border-t border-t-primary-dark pt-4 xl:col-span-3'>
             <p className='font-figtree'>{caseStudy[section]}</p>
           </div>
         </section>
