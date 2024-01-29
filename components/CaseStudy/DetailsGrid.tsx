@@ -14,7 +14,9 @@ const DetailsGrid = ({ caseStudy }: { caseStudy: ICaseStudy }) => {
             </h2>
           </div>
           <div className='col-span-4 whitespace-pre-wrap border-t border-t-primary-dark pt-4 xl:col-span-3'>
-            <p className='font-figtree'>{caseStudy[section]}</p>
+            <p className='font-figtree leading-tight'>
+              {caseStudy[section]}
+            </p>
           </div>
         </section>
       ))}
