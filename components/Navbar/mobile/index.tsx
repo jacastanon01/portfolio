@@ -8,7 +8,7 @@ import HamburgerIcon from './HamburgerIcon';
 import MobileMenu from './MobileMenu';
 
 const MobileNav = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {
     setIsMenuOpen((prev) => !prev);

@@ -8,8 +8,8 @@ const DetailsGrid = ({ caseStudy }: { caseStudy: ICaseStudy }) => {
     <div className='flex flex-col items-center justify-between gap-10'>
       {['summary', 'challenges', 'result'].map((section) => (
         <section key={section} className='grid grid-cols-4'>
-          <div className='col-span-1 hidden items-center lg:flex'>
-            <h2 className='text-xl font-semibold text-primary'>
+          <div className='col-span-4 flex items-center xl:col-span-1'>
+            <h2 className='text-2xl font-semibold text-primary xl:text-xl'>
               {caseStudy[section + 'Title']}
             </h2>
           </div>

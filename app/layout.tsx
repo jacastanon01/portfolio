@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${figtree.variable} flex-between min-h-screen flex-col bg-white-800  px-6 font-poppins dark:bg-black-300 dark:text-white-800 md:px-12 lg:px-20`}
       >
         <ThemeProvider defaultTheme={theme?.value || ''}>
-          <main>
+          <main className='flex min-h-svh flex-col justify-between'>
             <Navbar />
             {children}
             <Footer />
