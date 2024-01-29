@@ -20,7 +20,21 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jacastanon.vercel.app/'),
   title: 'Jacob Castanon | Portfolio',
+  openGraph: {
+    title: "Jacob's Portfolio",
+    url: 'https://jacastanon.vercel.app/',
+    siteName: 'Portfolio',
+    images: [
+      {
+        url: '/assets/dev.png',
+        width: 1200,
+        height: 630,
+        alt: 'Jacob Castanon Portfolio',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
