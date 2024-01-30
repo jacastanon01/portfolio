@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { fetchProjects } from '@/sanity/lib/utils';
 import ProjectCard from '@/components/ProjectPage/ProjectCard';
 
+export const revalidate = 0;
+
 export default async function ProjectPage() {
   const projects = await fetchProjects();
 
