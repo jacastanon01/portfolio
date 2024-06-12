@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
 import { useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
-import type { IProjectCard } from '@/types';
 import { useMediumQuery } from '@/hooks/useMediaQuery';
+import type { IProjectCard } from '@/types';
 
 import { MotionDiv } from '../Motion';
 
@@ -37,6 +37,8 @@ const ProjectCard = ({
   });
   const controls = useAnimation();
   const isMedium = useMediumQuery();
+
+  const encodedTitle = encodeURIComponent(project.title);
 
   useEffect(() => {
     if (!isMedium) {
@@ -70,7 +72,7 @@ const ProjectCard = ({
           {project.description}
         </p>
         <Link
-          href={`/projects/${project.title}`}
+          href={`/projects/${encodedTitle}`}
           className='relative h-64 w-full md:h-80'
         >
           <Image

@@ -27,7 +27,7 @@ const Overview = ({ project }: { project: IProjectDetails }) => {
         <Image
           src={project.img}
           alt={project.title}
-          className='object-cover'
+          className='object-contain'
           fill
         />
       </div>

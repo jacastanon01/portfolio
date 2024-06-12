@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
-import { fetchProjects } from '@/sanity/lib/utils';
 import ProjectCard from '@/components/ProjectPage/ProjectCard';
+import { fetchProjects } from '@/sanity/lib/utils';
 
 export const revalidate = 0;
 

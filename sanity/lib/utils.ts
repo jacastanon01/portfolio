@@ -1,7 +1,7 @@
 import { createClient } from 'next-sanity';
 
-import { ICaseStudy, IProjectCard, ISkillIcon } from '@/types';
 import { caseStudyTitles } from '@/constants';
+import { ICaseStudy, IProjectCard, ISkillIcon } from '@/types';
 
 import { config } from './config';
 
@@ -40,7 +40,7 @@ export const fetchMainSkillsForHomePage = async () => {
 export const fetchProjects = async () =>
   await client.fetch<
     (IProjectCard & { skills: ISkillIcon[] })[]
-  >(`*[_type == "projects"] | order(_createdAt asc) {
+  >(`*[_type == "projects"] | order(_updatedAt desc) {
     title,
     description,
     "img": imgUrl.asset->url,
